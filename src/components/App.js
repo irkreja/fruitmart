@@ -2,29 +2,29 @@ import React from "react";
 import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
-import Fish from "./Fish";
-import sampleFishes from "../sample-fishes";
-import base from "../base";
+import Fruit from "./Fruit";
+import samplefruits from "../sample-fruits";
+// import base from "../base";
 
 class App extends React.Component {
   // state = {
-  //   fishes: {},
+  //   fruits: {},
   //   order: {}
   // };
   constructor(props) {
     super(props);
     this.state = {
-      fishes: {},
+      fruits: {},
       order: {}
     };
-    this.addFish = this.addFish.bind(this);
-    this.updateFish = this.updateFish.bind(this);
-    this.deleteFish = this.deleteFish.bind(this);
-    this.loadSampleFishes = this.loadSampleFishes.bind(this);
+    this.addFruit = this.addFruit.bind(this);
+    this.updateFruit = this.updateFruit.bind(this);
+    this.deleteFruit = this.deleteFruit.bind(this);
+    this.loadSampleFruits = this.loadSampleFruits.bind(this);
     this.addToOrder = this.addToOrder.bind(this);
     this.removeFromOrder = this.removeFromOrder.bind(this);
   }
-
+  /*
   componentDidMount() {
     const { params } = this.props.match;
     const localStorageRef = localStorage.getItem(params.storeId);
@@ -34,56 +34,55 @@ class App extends React.Component {
       // Since localstorange value is string we need to parse as JSON
     }
 
-    this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`, {
+    this.ref = base.syncState(`${this.props.match.params.storeId}/fruits`, {
       context: this,
-      state: "fishes"
+      state: "fruits"
     });
-    /* this.ref is different than react input ref
-    it is just for reference a piece of data in firebase db */
+    //this.ref is different than react input ref it is just for reference a piece of data in firebase db
   }
+*/
+  // componentWillUnmount() {
+  //   base.removeBinding(this.ref);
+  // }
 
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
-  }
-
-  componentDidUpdate() {
+  /*   componentDidUpdate() {
     localStorage.setItem(
       this.props.match.params.storeId,
       JSON.stringify(this.state.order)
     );
-  }
+  } */
 
-  addFish(fish) {
+  addFruit(fruit) {
     // 1. Take a copy of the existing state
-    const fishes = { ...this.state.fishes };
-    // 2. Add our new fish to that fishes variable
-    fishes[`fish${Date.now()}`] = fish;
-    // 3. Set the new fishes object to state
-    this.setState({ fishes });
+    const fruits = { ...this.state.fruits };
+    // 2. Add our new fruit to that fruits variable
+    fruits[`fruit${Date.now()}`] = fruit;
+    // 3. Set the new fruits object to state
+    this.setState({ fruits });
   }
 
-  updateFish(key, updatedFish) {
+  updateFruit(key, updatedFruit) {
     // 1. Take a copy of the current state
-    const fishes = { ...this.state.fishes };
+    const fruits = { ...this.state.fruits };
     // 2. Update that state
-    fishes[key] = updatedFish;
+    fruits[key] = updatedFruit;
     // 3. Set that to state
-    this.setState({ fishes });
+    this.setState({ fruits });
   }
 
-  deleteFish(key) {
+  deleteFruit(key) {
     // 1. take a copy of state
-    const fishes = { ...this.state.fishes };
+    const fruits = { ...this.state.fruits };
     // 2. update the state
-    // delete fishes[key];
-    fishes[key] = null;
-    // delete fishes[key];
+    // delete fruits[key];
+    // fruits[key] = null;
+    delete fruits[key];
     // 3.  update state
-    this.setState({ fishes });
+    this.setState({ fruits });
   }
 
-  loadSampleFishes() {
-    this.setState({ fishes: sampleFishes });
+  loadSampleFruits() {
+    this.setState({ fruits: samplefruits });
   }
 
   addToOrder(key) {
@@ -108,14 +107,14 @@ class App extends React.Component {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
-          <Header tagline="Fresh Seafood Market" />
+          <Header tagline="Fresh Fruits Market" />
 
-          <ul className="fishes">
-            {Object.keys(this.state.fishes).map(key => (
-              <Fish
+          <ul className="fruits">
+            {Object.keys(this.state.fruits).map(key => (
+              <Fruit
                 key={key}
                 index={key}
-                details={this.state.fishes[key]}
+                details={this.state.fruits[key]}
                 addToOrder={this.addToOrder}
               />
             ))}
@@ -123,17 +122,17 @@ class App extends React.Component {
         </div>
 
         <Order
-          fishes={this.state.fishes}
+          fruits={this.state.fruits}
           order={this.state.order}
           removeFromOrder={this.removeFromOrder}
         />
 
         <Inventory
-          addFish={this.addFish}
-          updateFish={this.updateFish}
-          deleteFish={this.deleteFish}
-          loadSampleFishes={this.loadSampleFishes}
-          fishes={this.state.fishes}
+          addFruit={this.addFruit}
+          updateFruit={this.updateFruit}
+          deleteFruit={this.deleteFruit}
+          loadSampleFruits={this.loadSampleFruits}
+          fruits={this.state.fruits}
           storeId={this.props.match.params.storeId}
         />
       </div>

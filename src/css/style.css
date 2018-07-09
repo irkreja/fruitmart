@@ -255,6 +255,10 @@ body {
   font-size: 2rem;
 }
 
+.logout {
+  text-align: right;
+}
+
 h1 {
   font-family: 'blanchcaps_inline', sans-serif;
   text-align: center;
@@ -483,7 +487,7 @@ ul.order li span.count span {
   text-align: center;
 }
 
-.fish-edit {
+.fruit-edit {
   margin-bottom: 20px;
   border: 2px solid #000;
   overflow: hidden;
@@ -494,7 +498,7 @@ ul.order li span.count span {
   flex-wrap: wrap;
 }
 
-.fish-edit input, .fish-edit textarea, .fish-edit select {
+.fruit-edit input, .fruit-edit textarea, .fruit-edit select {
   width: 33.33%;
   padding: 10px;
   line-height: 1;
@@ -509,25 +513,25 @@ ul.order li span.count span {
   background: #fff;
 }
 
-.fish-edit input:focus, .fish-edit textarea:focus, .fish-edit select:focus {
+.fruit-edit input:focus, .fruit-edit textarea:focus, .fruit-edit select:focus {
   outline: 0;
   background: #fef2de;
 }
 
-.fish-edit textarea {
+.fruit-edit textarea {
   width: 100%;
 }
 
-.fish-edit input:last-of-type {
+.fruit-edit input:last-of-type {
   width: 100%;
 }
 
-.fish-edit button {
+.fruit-edit button {
   width: 100%;
   border: 0;
 }
 
-.list-of-fish {
+.list-of-fruit {
   border-top: 2px solid #000;
   border-bottom: 1px solid #000;
   padding-top: 5px;
@@ -536,7 +540,7 @@ ul.order li span.count span {
   transform: translateZ(0);
 }
 
-.menu-fish {
+.menu-fruit {
   border-bottom: 2px solid #000;
   border-top: 1px solid #000;
   padding-bottom: 2rem;
@@ -547,42 +551,42 @@ ul.order li span.count span {
   display: flex;
 }
 
-.menu-fish>.right {
+.menu-fruit>.right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.menu-fish>.right>*:not(:last-child){
+.menu-fruit>.right>*:not(:last-child){
   padding-bottom: 10px;
 }
 
-.menu-fish>.right p {
+.menu-fruit>.right p {
   margin: 0;
   font-size: 1.8rem;
 }
 
-.menu-fish>.right>.fish-name {
+.menu-fruit>.right>.fruit-name {
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.menu-fish>.right>.price {
+.menu-fruit>.right>.price {
   font-size: 1.4rem;
   justify-content: flex-end;
 }
-.menu-fish>.right>button {
+.menu-fruit>.right>button {
   max-width: 125px;
 }
 
-.menu-fish>.right>button[disabled] {
+.menu-fruit>.right>button[disabled] {
   position: relative;
   left: -40px;
 }
 
-.menu-fish img {
+.menu-fruit img {
   max-width: 150px;
   max-height: 110px;
   margin-right: 1rem;

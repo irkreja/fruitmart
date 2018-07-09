@@ -1,6 +1,6 @@
 import React from "react";
 
-class AddFishForm extends React.Component {
+class AddFruitForm extends React.Component {
   constructor(props) {
     super(props);
     this.nameRef = React.createRef();
@@ -8,15 +8,15 @@ class AddFishForm extends React.Component {
     this.statusRef = React.createRef();
     this.descRef = React.createRef();
     this.imageRef = React.createRef();
-    this.createFish = this.createFish.bind(this);
+    this.createFruit = this.createFruit.bind(this);
   }
 
-  createFish(e) {
+  createFruit(e) {
     //   1. Prevent From Submitting
     e.preventDefault();
 
     // 2. Get Form Data
-    const fish = {
+    const fruit = {
       name: this.nameRef.current.value,
       price: parseFloat(this.priceRef.current.value),
       status: this.statusRef.current.value,
@@ -25,7 +25,7 @@ class AddFishForm extends React.Component {
     };
 
     // 3. Pass Form data to State Component
-    this.props.addFish(fish);
+    this.props.addFruit(fruit);
 
     // 4. Reset the input field aka current event target
     e.currentTarget.reset();
@@ -33,7 +33,7 @@ class AddFishForm extends React.Component {
 
   render() {
     return (
-      <form className="fish-edit" onSubmit={this.createFish}>
+      <form className="fruit-edit" onSubmit={this.createFruit}>
         <input
           type="text"
           name="name"
@@ -60,10 +60,10 @@ class AddFishForm extends React.Component {
           required
           placeholder="Image"
         />
-        <button type="submit">+ Add Fish</button>
+        <button type="submit">+ Add Fruit</button>
       </form>
     );
   }
 }
 
-export default AddFishForm;
+export default AddFruitForm;

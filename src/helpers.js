@@ -1,34 +1,32 @@
 export function formatPrice(cents) {
-    return (cents / 100).toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD"
-    });
+  return (cents / 100).toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD"
+  });
 }
 
 export function rando(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export const storeNames = [
-    "OnDemand Fish",
-    "Fish Development",
-    "Fish Solution",
-    "Fish Points",
-    "Fish Forever",
-    "Fish Square",
-    "Fish Villa"
+  "Fruit Points",
+  "Fruit Development",
+  "Fruit Solution",
+  "Fruit Forever",
+  "Fruit Square",
+  "Fruit Villa"
 ];
 
 export function getStoreName() {
-    const storeNames = [
-        "OnDemand Fish",
-        "Fish Development",
-        "Fish Solution",
-        "Fish Points",
-        "Fish Forever",
-        "Fish Square",
-        "Fish Villa"
-    ];
+  const storeNames = [
+    "Fruit Points",
+    "Fruit Development",
+    "Fruit Solution",
+    "Fruit Forever",
+    "Fruit Square",
+    "Fruit Villa"
+  ];
 
-    return rando(storeNames);
+  return rando(storeNames);
 }

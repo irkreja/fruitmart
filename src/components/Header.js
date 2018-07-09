@@ -3,8 +3,8 @@ import React from "react";
 const Header = props => (
   <header className="top">
     <h2>
-      <svg height="25" width="250">
-        <g transform="scale(0.3)">
+      <svg height="35" width="250">
+        {/* <g transform="scale(0.3)">
           <path
             d="M119.1,16.9C109.3,12.9,90.5,0,77.4,0c-1,0-1.6,0.2-1.6,0.7c0,1.8,7.9,8.4,7.9,13.9c0,7.8-31.1,13-41.7,13
 		c-12.8,0-30.7-14.8-38.9-14.8c-1.9,0-3,0.5-3,1.4c0,1.1,23.1,15.7,23.1,30.6C23.3,60.7,0,78,0,79.5c0,0.5,0.7,0.6,1.2,0.6
@@ -13,9 +13,10 @@ const Header = props => (
 		c-12.9,0-20.9,5.7-20.9,12.3c0,7.1,12.9,13.1,29.8,13.1c19.9,0,32.2-7.8,32.2-16.2c0-10.8-19.5-20.7-42.1-20.7
 		c-28.8,0-45.3,12-45.3,23.8c0,11.7,20.4,26.3,54.5,26.3c40.5,0,65.6-22.5,65.6-30.4C171,41.6,135.4,23.6,119.1,16.9z"
           />
-        </g>
+        </g> */}
+        <image href="/images/fruit_menu.svg" width="25" height="35" />
         <text x="55" y="25" fill="#fcb034">
-          FISHMART
+          FRUITMART
         </text>
         Sorry, your browser does not support inline SVG.
       </svg>
